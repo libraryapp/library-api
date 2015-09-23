@@ -7,12 +7,16 @@
  5. Then ./gradlew run
 
 SQL - for linux (ubuntu 14.04)
-1) ``sudo apt-get install mysql-server``
-2) enter password
+
+1. ``sudo apt-get install mysql-server``
+2. enter password
 log into server shell
-3) ``mysql -u root -p``
+3. ``mysql -u root -p``
+
 create database
+
 > ``create database bookshelf;``
+
 use script to generate tables by pasting in eg_db.sql into the shell
 
 create new user
