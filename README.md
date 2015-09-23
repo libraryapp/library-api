@@ -5,3 +5,5 @@
  3. Can use the eg_db.sql file to get the basic database structure and a couple of dummy entries.
  4. In the terminal, run ./gradlew build
  5. Then ./gradlew run
+
+Until swagger gets involved, view all books at [localhost:8080/books](http://localhost:8080/books) and an individual book like [localhost:8080/books/1](http://localhost:8080/books/1)
