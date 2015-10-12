@@ -17,8 +17,8 @@ public class BookDAO extends AbstractDAO<Book> {
         return Optional.fromNullable(get(id));
     }
 
-    public Book create(Book book) {
-        return persist(book);
+    public long create(Book book) {
+        return persist(book).getId();
     }
 
     public List<Book> findAll() {

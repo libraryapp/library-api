@@ -2,7 +2,6 @@ package com.bookshelf;
 
 import com.bookshelf.db.BookDAO;
 import com.bookshelf.models.Book;
-import com.bookshelf.models.Shelf;
 import com.bookshelf.resources.BookResource;
 import io.dropwizard.Application;
 import io.dropwizard.hibernate.HibernateBundle;

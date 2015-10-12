@@ -3,17 +3,16 @@ package com.bookshelf.resources;
         import com.bookshelf.db.BookDAO;
         import com.bookshelf.models.Book;
         import com.google.common.base.Optional;
+        import com.wordnik.swagger.annotations.ApiParam;
         import io.dropwizard.hibernate.UnitOfWork;
         import io.dropwizard.jersey.params.LongParam;
-        import javax.ws.rs.NotFoundException;
+
+        import javax.ws.rs.*;
 
         import javax.ws.rs.core.MediaType;
+        import javax.ws.rs.core.Response;
 
 
-        import javax.ws.rs.GET;
-        import javax.ws.rs.Path;
-        import javax.ws.rs.PathParam;
-        import javax.ws.rs.Produces;
         import java.util.List;
 
 @Path("/books")
@@ -45,5 +44,16 @@ public class BookResource {
     @UnitOfWork
     public List<Book> findAll() {
         return booksDAO.findAll();
+    }
+
+    @POST
+    @UnitOfWork
+    public Optional<Book> create(@ApiParam Book book) {
+
+        if (book == null) {
+            throw new WebApplicationException("Invalid Payload", Response.Status.BAD_REQUEST);
+        }
+        long id = booksDAO.create(book);
+        return booksDAO.findById(id);
     }
 }
