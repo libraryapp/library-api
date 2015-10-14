@@ -48,10 +48,15 @@ Until swagger gets involved, view all books at [localhost:8080/books](http://loc
 
 you may get the following message
 “ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)”
-Then do the following in the terminal do the following
+Then do the following in the terminal
+
 1. mysqld stop touch /tmp/mysql.sock
+
 2. mysqld_safe restart
+
 3. mysql -uroot, if this does not work then do the following
+
 4. mysql.server restart
+
 5. mysql -uroot
 
