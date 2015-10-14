@@ -22,9 +22,7 @@ setting up SQL - for linux (ubuntu 14.04)
 3. log into mysql shell using
 > ``mysql -u root -p``
 
-Note: you may get the following message
-“ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)”
-If this is the case then follow the steps described below headed Errors with mysql
+Note: you may get the following message “ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)”. If this is the case then follow the steps described below headed Errors with mysql
 
 4. create database from inside this shell
 > ``create database bookshelf;``
