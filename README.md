@@ -21,7 +21,11 @@ setting up SQL - for linux (ubuntu 14.04)
 
 3. log into mysql shell using
 > ``mysql -u root -p``
- 
+
+Note: you may get the following message
+“ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)”
+If this is the case then follow the steps described below headed Errors with mysql
+
 4. create database from inside this shell
 > ``create database bookshelf;``
  
@@ -39,3 +43,15 @@ setting up SQL - for linux (ubuntu 14.04)
 > ``grant all privileges on *.* to 'admin'@'localhost' with grant option;``
 
 Until swagger gets involved, view all books at [localhost:8080/books](http://localhost:8080/books) and an individual book like [localhost:8080/books/1](http://localhost:8080/books/1)
+
+### Errors with mySQL
+
+you may get the following message
+“ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)”
+Then do the following in the terminal do the following
+1. mysqld stop touch /tmp/mysql.sock
+2. mysqld_safe restart
+3. mysql -uroot, if this does not work then do the following
+4. mysql.server restart
+5. mysql -uroot
+
