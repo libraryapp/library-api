@@ -3,16 +3,16 @@
 Ensure java JDK version 1.8 is installed.  unfortunately ubunut repositories do not have a source for v1.8 upgrading may need to be googled
 e.g. [http://stackoverflow.com/questions/30177455/moving-from-jdk-1-7-to-jdk-1-8-on-ubuntu]
 
- 1. [Install Gradle](https://docs.gradle.org/current/userguide/installation.html) to compile and run the app
- 2. Set up a database - [currently configured for MySQL](http://dev.mysql.com/doc/refman/5.6/en/installing.html) - see below for how to get set up on Ubuntu
- 3. Can use the eg_db.sql file to get the basic database structure and a couple of dummy entries.
+ 1. Set up a database - [currently configured for MySQL](http://dev.mysql.com/doc/refman/5.6/en/installing.html) - see below for how to get set up on Ubuntu
+ 2. You can use the eg_db.sql file to get the basic database structure and a couple of dummy entries.
+ 3. [Install Gradle](https://docs.gradle.org/current/userguide/installation.html) to compile and run the app.
  4. In the terminal, run ``./gradlew build``
  5. Then ``./gradlew run``
  6. Then visit [http://localhost:8080/books]
 
 
 
-setting up SQL - for linux (ubuntu 14.04)
+Setting up SQL - for linux (ubuntu 14.04)
 
 1. Install the MySql server using: 
 > ``sudo apt-get install mysql-server``
@@ -33,7 +33,7 @@ Note: you may get the following message “ERROR 2002 (HY000): Can't connect to 
 6. use the 'eg_db.sql' script to generate tables by pasting the script into the shell
 
 7. test by showing what is in the tables
-> ``select * from books``
+> ``select * from Books``
  
 8. create a new user, credentials are defined in 'configuration.yml'
 
