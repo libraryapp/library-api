@@ -16,16 +16,17 @@ CREATE TABLE `Books` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(150) DEFAULT '',
   `author` varchar(150) DEFAULT '',
+  `isbn` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `Books` WRITE;
 /*!40000 ALTER TABLE `Books` DISABLE KEYS */;
 
-INSERT INTO `Books` (`id`, `title`, `author`)
+INSERT INTO `Books` (`id`, `title`, `author`, `isbn`)
 VALUES
-	(1,'JS 101','J Martin'),
-	(2,'My First Java Book','A Smith');
+	(1,'JS 101','J Martin', '123123123'),
+	(2,'My First Java Book','A Smith', '456456456');
 
 /*!40000 ALTER TABLE `Books` ENABLE KEYS */;
 UNLOCK TABLES;

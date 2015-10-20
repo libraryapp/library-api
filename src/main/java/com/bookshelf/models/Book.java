@@ -27,16 +27,23 @@ public class Book {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "author", nullable = false)
-    private String author;
+    @Column(name = "authorFirst", nullable = false)
+    private String authorFirst;
 
+    @Column(name = "authorLast", nullable = false)
+    private String authorLast;
+
+    @Column(name = "isbn", nullable = false)
+    private String isbn;
 
     public Book(){
     }
 
-    public Book(String title, String author){
+    public Book(String title, String authorFirst, String authorLast, String isbn){
         title = this.title;
-        author = this.author;
+        authorFirst = this.authorFirst;
+        authorLast = this.authorLast;
+        isbn = this.isbn;
     }
 
 
@@ -56,12 +63,27 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAuthorFirst() {
+        return authorFirst;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthorFirst(String authorFirst) {
+        this.authorFirst = authorFirst;
     }
 
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getAuthorLast() {
+        return authorLast;
+    }
+
+    public void setAuthorLast(String authorLast) {
+        this.authorLast = authorLast;
+    }
 }
