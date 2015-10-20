@@ -15,17 +15,21 @@ DROP TABLE IF EXISTS `Books`;
 CREATE TABLE `Books` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(150) DEFAULT '',
-  `author` varchar(150) DEFAULT '',
+  `authorFirst` varchar(150) DEFAULT '',
+  `isbn` varchar(30) DEFAULT '',
+  `authorLast` varchar(150) DEFAULT '',
+  `subject` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `Books` WRITE;
 /*!40000 ALTER TABLE `Books` DISABLE KEYS */;
 
-INSERT INTO `Books` (`id`, `title`, `author`)
+INSERT INTO `Books` (`id`, `title`, `authorFirst`, `isbn`, `authorLast`, `subject`)
 VALUES
-	(1,'JS 101','J Martin'),
-	(2,'My First Java Book','A Smith');
+	(1,'New book','New author','1234132432',NULL,NULL),
+	(2,'Head First Java','A Smith','3453455345',NULL,NULL),
+	(3,'adfgad','Test first name','9780385472579','Smith',NULL);
 
 /*!40000 ALTER TABLE `Books` ENABLE KEYS */;
 UNLOCK TABLES;
