@@ -1,17 +1,22 @@
+# Copy this file, load up mysql in terminal, then paste and hit enter. 
+# This will give you the database schema that the library api relies on and also three dummy entries.
+# Then you can download a mysql gui like Sequel Pro and load up the database 'bookshelf' on localhost port 3006
+
+
+# Sets character sets and encoding
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table Books
-# ------------------------------------------------------------
-
+# Dump of table Books if it already exists
 DROP TABLE IF EXISTS `Books`;
 
+# (Re)creates 'Books' table with correct columns
 CREATE TABLE `Books` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(150) DEFAULT '',
@@ -25,11 +30,12 @@ CREATE TABLE `Books` (
 LOCK TABLES `Books` WRITE;
 /*!40000 ALTER TABLE `Books` DISABLE KEYS */;
 
+# Inserts three dummy rows into the database
 INSERT INTO `Books` (`id`, `title`, `authorFirst`, `isbn`, `authorLast`, `subject`)
 VALUES
-	(1,'New book','New author','1234132432',NULL,NULL),
-	(2,'Head First Java','A Smith','3453455345',NULL,NULL),
-	(3,'adfgad','Test first name','9780385472579','Smith',NULL);
+  (1,'New book','New author','1234132432',NULL,NULL),
+  (2,'Head First Java','A Smith','3453455345',NULL,NULL),
+  (12,'adfgad','Test first name','9780385472579','Smith',NULL);
 
 /*!40000 ALTER TABLE `Books` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -41,4 +47,3 @@ UNLOCK TABLES;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
