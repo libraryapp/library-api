@@ -36,14 +36,18 @@ public class Book {
     @Column(name = "isbn", nullable = false)
     private String isbn;
 
+    @Column(name = "subject", nullable = false)
+    private String subject;
+
     public Book(){
     }
 
-    public Book(String title, String authorFirst, String authorLast, String isbn){
+    public Book(String title, String authorFirst, String authorLast, String isbn, String subject){
         title = this.title;
         authorFirst = this.authorFirst;
         authorLast = this.authorLast;
         isbn = this.isbn;
+        subject = this.subject;
     }
 
 
@@ -85,5 +89,13 @@ public class Book {
 
     public void setAuthorLast(String authorLast) {
         this.authorLast = authorLast;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 }

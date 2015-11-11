@@ -23,7 +23,7 @@ CREATE TABLE `Books` (
   `authorFirst` varchar(150) DEFAULT '',
   `isbn` varchar(30) DEFAULT '',
   `authorLast` varchar(150) DEFAULT '',
-  `subject` int(11) DEFAULT NULL,
+  `subject` varchar(50) DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -33,9 +33,9 @@ LOCK TABLES `Books` WRITE;
 # Inserts three dummy rows into the database
 INSERT INTO `Books` (`id`, `title`, `authorFirst`, `isbn`, `authorLast`, `subject`)
 VALUES
-  (1,'New book','New author','1234132432',NULL,NULL),
-  (2,'Head First Java','A Smith','3453455345',NULL,NULL),
-  (12,'adfgad','Test first name','9780385472579','Smith',NULL);
+  (1,'New book','Jacob','1234132432','White','Javascript'),
+  (2,'Head First Java','Alan','3453455345','Davies','Node'),
+  (12,'adfgad','Test first name','9780385472579','Smith','Java');
 
 /*!40000 ALTER TABLE `Books` ENABLE KEYS */;
 UNLOCK TABLES;
